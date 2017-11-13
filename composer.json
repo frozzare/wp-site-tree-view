@@ -1,0 +1,35 @@
+{
+  "name": "frozzare/wp-site-tree-view",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "description": "Site Tree View prototype for WordPress",
+  "homepage": "https://github.com/frozzare/wp-site-tree-view",
+  "authors": [
+    {
+      "name": "Fredrik Forsmo",
+      "email": "fredrik.forsmo@gmail.com",
+      "homepage": "https://github.com/frozzare"
+    }
+  ],
+ "autoload": {
+    "classmap": [
+      "src/"
+    ]
+ },
+  "keywords": [
+  ],
+  "require": {
+    "php": "^7.0",
+    "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "frozzare/wp-test-suite": "~1.0",
+    "wp-coding-standards/wpcs": "dev-develop"
+  },
+  "scripts": {
+    "post-install-cmd": "if [ -f vendor/bin/phpcs ]; then \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs; fi",
+    "post-update-cmd" : "if [ -f vendor/bin/phpcs ]; then \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs; fi"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
